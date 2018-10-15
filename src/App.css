@@ -1,32 +1,73 @@
+
+@import url('https://fonts.googleapis.com/css?family=Charmonman|Righteous');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.appTitle {
+  font-family: 'Righteous', sans-serif;
+  font-weight: 300;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.body {
+  background: #E9EBEE;
 }
 
-.App-link {
-  color: #61dafb;
+.bounce-in-top {
+	animation: bounce-in-top 1.1s both;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/**
+ * ----------------------------------------
+ * animation bounce-in-top
+ * ----------------------------------------
+ */
+@keyframes bounce-in-top {
+  0% {
+    transform: translateY(-500px);
+    animation-timing-function: ease-in;
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  38% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-65px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateY(-8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
   }
 }
+
+
+.btn-group {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+
