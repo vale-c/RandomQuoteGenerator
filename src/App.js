@@ -10,15 +10,11 @@ class App extends Component {
       quote: 'Welcome to the Random Quote Generator. Enjoy!',
       author: 'Vale Calabrese'
     }
-    this.handleClick = this
-      .handleClick
-      .bind(this);
-    this.handleTweetClick = this
-      .handleTweetClick
-      .bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleTweetClick = this.handleTweetClick.bind(this);
   }
 
-  componenetDidMount() {
+  componentDidMount() {
     fetch(this.state.url)
       .then(function (res) {
         return res.json();
@@ -77,7 +73,7 @@ class App extends Component {
           <div className="btn-group" role="group">
             <button onClick={this.handleClick} className="btn btn-info">New Quote</button>
             <button onClick={this.handleTweetClick} className="btn btn-info">
-              <i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;Tweet</button>
+              <i className="fa fa-twitter" aria-hidden="true"></i>&nbsp;Tweet</button>
           </div>
         </div>
       </div>
