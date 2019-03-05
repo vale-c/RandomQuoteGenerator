@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: 'https://talaikis.com/api/quotes/random/',
+      url: 'https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en',
       quote: 'Welcome to the Random Quote Generator. Enjoy!',
       author: 'Vale Calabrese'
     }
@@ -15,13 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(this.state.url)
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
-        this.setState({quote: data.quote, author: data.author});
-      }.bind(this));
+    this.handleClick();
   }
 
   handleClick() {
@@ -29,8 +23,8 @@ class App extends Component {
       .then(function (res) {
         return res.json();
       })
-      .then(function (data) {
-        this.setState({quote: data.quote, author: data.author});
+      .then(function (response) {
+        this.setState({quote: response.quoteText, author: response.quoteAuthor});
       }.bind(this));
   }
 
@@ -57,9 +51,10 @@ class App extends Component {
       opacity: '0.8'
     }
 
+    
     return (
       <div className="App container">
-        <h3 className="appTitle">Quote Machine</h3>
+        <h3 className="appauthor">Quote Machine</h3>
         <div className="container">
           <img
             className="bg-img bounce-in-top"
@@ -72,6 +67,7 @@ class App extends Component {
           </blockquote>
           <div className="btn-group" role="group">
             <button onClick={this.handleClick} className="btn btn-info">New Quote</button>
+
             <button onClick={this.handleTweetClick} className="btn btn-info">
               <i className="fa fa-twitter" aria-hidden="true"></i>&nbsp;Tweet</button>
           </div>
