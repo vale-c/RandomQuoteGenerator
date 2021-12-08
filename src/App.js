@@ -64,7 +64,10 @@ const App = () => {
           <q>{quote}</q>
           <p>{author}</p>
         </blockquote>
-        <div class="row" style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          className="row"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
           <div
             className="btn-toolbar"
             role="toolbar"
